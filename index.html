@@ -1,1 +1,138 @@
-<h1> hello CCT people........</h1>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Tic Tac Toe</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      background: #f2f2f2;
+    }
+
+    h1 {
+      margin-top: 20px;
+    }
+
+    .board {
+      display: grid;
+      grid-template-columns: repeat(3, 100px);
+      grid-gap: 10px;
+      justify-content: center;
+      margin-top: 30px;
+    }
+
+    .cell {
+      width: 100px;
+      height: 100px;
+      background: white;
+      font-size: 40px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      border: 2px solid #333;
+    }
+
+    .cell:hover {
+      background: #e6e6e6;
+    }
+
+    #status {
+      margin-top: 20px;
+      font-size: 20px;
+    }
+
+    button {
+      margin-top: 20px;
+      padding: 10px 20px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Tic Tac Toe</h1>
+
+  <div class="board" id="board">
+    <div class="cell"></div>
+    <div class="cell"></div>
+    <div class="cell"></div>
+    <div class="cell"></div>
+    <div class="cell"></div>
+    <div class="cell"></div>
+    <div class="cell"></div>
+    <div class="cell"></div>
+    <div class="cell"></div>
+  </div>
+
+  <div id="status">Player X's turn</div>
+  <button onclick="resetGame()">Restart Game</button>
+
+  <script>
+    const cells = document.querySelectorAll(".cell");
+    const statusText = document.getElementById("status");
+
+    let currentPlayer = "X";
+    let gameActive = true;
+
+    const winConditions = [
+      [0,1,2], [3,4,5], [6,7,8],
+      [0,3,6], [1,4,7], [2,5,8],
+      [0,4,8], [2,4,6]
+    ];
+
+    cells.forEach((cell, index) => {
+      cell.addEventListener("click", () => cellClicked(index));
+    });
+
+    function cellClicked(index) {
+      if (cells[index].textContent !== "" || !gameActive) return;
+
+      cells[index].textContent = currentPlayer;
+      checkWinner();
+
+      currentPlayer = currentPlayer === "X" ? "O" : "X";
+      if (gameActive) {
+        statusText.textContent = `Player ${currentPlayer}'s turn`;
+      }
+    }
+
+    function checkWinner() {
+      for (let condition of winConditions) {
+        const [a, b, c] = condition;
+
+        if (
+          cells[a].textContent !== "" &&
+          cells[a].textContent === cells[b].textContent &&
+          cells[a].textContent === cells[c].textContent
+        ) {
+          statusText.textContent = `Player ${cells[a].textContent} wins! 🎉`;
+          gameActive = false;
+          return;
+        }
+      }
+
+      let draw = true;
+      cells.forEach(cell => {
+        if (cell.textContent === "") draw = false;
+      });
+
+      if (draw) {
+        statusText.textContent = "It's a draw! 😐";
+        gameActive = false;
+      }
+    }
+
+    function resetGame() {
+      cells.forEach(cell => cell.textContent = "");
+      currentPlayer = "X";
+      gameActive = true;
+      statusText.textContent = "Player X's turn";
+    }
+  </script>
+
+</body>
+</html>
+
