@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Glow Accessories</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      background-color: #f9f9f9;
+    }
+
+    header {
+      background-color: #ff7aa2;
+      color: white;
+      padding: 20px;
+      text-align: center;
+    }
+
+    nav {
+      background-color: #333;
+      padding: 10px;
+      text-align: center;
+    }
+
+    nav a {
+      color: white;
+      margin: 0 15px;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    nav a:hover {
+      color: #ff7aa2;
+    }
+
+    .hero {
+      padding: 40px;
+      text-align: center;
+      background-color: #ffe6ee;
+    }
+
+    .hero h2 {
+      margin-bottom: 10px;
+    }
+
+    .products {
+      padding: 20px;
+      text-align: center;
+    }
+
+    .product-box {
+      display: inline-block;
+      width: 200px;
+      background: white;
+      margin: 15px;
+      padding: 15px;
+      border-radius: 10px;
+      box-shadow: 0 0 5px #ccc;
+    }
+
+    .product-box img {
+      width: 100%;
+      border-radius: 8px;
+    }
+
+    footer {
+      background-color: #333;
+      color: white;
+      text-align: center;
+      padding: 15px;
+      margin-top: 20px;
+    }
+
+    button {
+      background-color: #ff7aa2;
+      border: none;
+      color: white;
+      padding: 8px 12px;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: #e85c87;
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <h1>Glow Accessories</h1>
+  <p>Your Style, Our Passion ✨</p>
+</header>
+
+<nav>
+  <a href="#">Home</a>
+  <a href="#">Products</a>
+  <a href="#">About</a>
+  <a href="#">Contact</a>
+</nav>
+
+<div class="hero">
+  <h2>Beautiful Accessories for Every Occasion</h2>
+  <p>Necklaces • Earrings • Rings • Bags • Hair Clips</p>
+</div>
+
+<section class="products">
+  <h2>Our Products</h2>
+
+  <div class="product-box">
+    <img src="https://via.placeholder.com/200" alt="Necklace">
+    <h3>Necklace</h3>
+    <p>Rs. 999</p>
+    <button>Buy Now</button>
+  </div>
+
+  <div class="product-box">
+    <img src="https://via.placeholder.com/200" alt="Earrings">
+    <h3>Earrings</h3>
+    <p>Rs. 499</p>
+    <button>Buy Now</button>
+  </div>
+
+  <div class="product-box">
+    <img src="https://via.placeholder.com/200" alt="Hand Bag">
+    <h3>Hand Bag</h3>
+    <p>Rs. 1999</p>
+    <button>Buy Now</button>
+  </div>
+
+</section>
+
+<footer>
+  <p>© 2026 Glow Accessories | All Rights Reserved</p>
+  <p>Contact: glowaccessories@email.com</p>
+</footer>
+
+</body>
+</html>
