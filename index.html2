@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Shiny Accessories Shop</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background: linear-gradient(to right, #ffe0f0, #e0f7ff);
+    }
+
+    header {
+      background: linear-gradient(to right, #ff5fa2, #ff9f68);
+      color: white;
+      padding: 20px;
+      text-align: center;
+    }
+
+    nav {
+      background-color: #333;
+      padding: 10px;
+      text-align: center;
+    }
+
+    nav a {
+      color: white;
+      margin: 0 15px;
+      text-decoration: none;
+      font-size: 18px;
+    }
+
+    nav a:hover {
+      color: #ff5fa2;
+    }
+
+    .hero {
+      text-align: center;
+      padding: 40px;
+    }
+
+    .hero h2 {
+      color: #444;
+    }
+
+    .products {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      padding: 20px;
+    }
+
+    .product {
+      background: white;
+      width: 220px;
+      margin: 15px;
+      padding: 15px;
+      border-radius: 15px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.2);
+      text-align: center;
+      transition: transform 0.3s;
+    }
+
+    .product:hover {
+      transform: scale(1.05);
+    }
+
+    .product img {
+      width: 100%;
+      border-radius: 10px;
+    }
+
+    .product h3 {
+      color: #ff5fa2;
+    }
+
+    button {
+      background: linear-gradient(to right, #ff5fa2, #ff9f68);
+      border: none;
+      color: white;
+      padding: 10px 15px;
+      border-radius: 20px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background: linear-gradient(to right, #ff9f68, #ff5fa2);
+    }
+
+    footer {
+      background: #333;
+      color: white;
+      text-align: center;
+      padding: 15px;
+      margin-top: 20px;
+    }
+  </style>
+</head>
+
+<body>
+
+<header>
+  <h1>✨ Shiny Accessories Shop ✨</h1>
+  <p>Rings • Bracelets • Earrings • Necklaces</p>
+</header>
+
+<nav>
+  <a href="#">Home</a>
+  <a href="#">Shop</a>
+  <a href="#">About</a>
+  <a href="#">Contact</a>
+</nav>
+
+<div class="hero">
+  <h2>Beautiful Accessories for Your Style</h2>
+  <p>Make yourself shine with our trendy collection 💖</p>
+</div>
+
+<section class="products">
+
+  <div class="product">
+    <img src="https://images.unsplash.com/photo-1600185365483-26d7f7bdfd8f" alt="Ring">
+    <h3>Gold Ring</h3>
+    <p>Rs. 1200</p>
+    <button>Buy Now</button>
+  </div>
+
+  <div class="product">
+    <img src="https://images.unsplash.com/photo-1617038260897-41a1f14b7f49" alt="Bracelet">
+    <h3>Bracelet</h3>
+    <p>Rs. 800</p>
+    <button>Buy Now</button>
+  </div>
+
+  <div class="product">
+    <img src="https://images.unsplash.com/photo-1618354691373-65e5f95d3c5d" alt="Earrings">
+    <h3>Earrings</h3>
+    <p>Rs. 600</p>
+    <button>Buy Now</button>
+  </div>
+
+  <div class="product">
+    <img src="https://images.unsplash.com/photo-1602526219045-5b0e9bffb12f" alt="Necklace">
+    <h3>Necklace</h3>
+    <p>Rs. 1500</p>
+    <button>Buy Now</button>
+  </div>
+
+</section>
+
+<footer>
+  <p>© 2026 Shiny Accessories Shop</p>
+  <p>Order on WhatsApp: +977-98XXXXXXX</p>
+</footer>
+
+</body>
+</html>
