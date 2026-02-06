@@ -2,157 +2,136 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>StyleWave Clothing</title>
+  <title>🏅 Sports Players Directory</title>
   <style>
     body {
-      margin: 0;
-      font-family: Arial, sans-serif;
+      margin: 0; 
+      font-family: Arial, sans-serif; 
       background: linear-gradient(to right, #fceabb, #f8b500);
-    }
-
-    header {
-      background: linear-gradient(to right, #ff416c, #ff4b2b);
-      color: white;
-      padding: 20px;
-      text-align: center;
-    }
-
-    nav {
-      background-color: #333;
-      padding: 10px;
-      text-align: center;
-    }
-
-    nav a {
-      color: white;
-      margin: 0 15px;
-      text-decoration: none;
-      font-size: 18px;
-    }
-
-    nav a:hover {
-      color: #ff416c;
-    }
-
-    .hero {
-      text-align: center;
-      padding: 40px;
       color: #333;
     }
 
-    .hero h2 {
-      font-size: 32px;
-    }
-
-    .products {
-      display: flex;
-      justify-content: center;
-      flex-wrap: wrap;
+    header {
+      text-align: center;
+      background: #5bc0eb;
+      color: white;
       padding: 20px;
     }
 
-    .product {
-      background: white;
-      width: 220px;
-      margin: 15px;
-      padding: 15px;
-      border-radius: 15px;
-      box-shadow: 0 0 10px rgba(0,0,0,0.2);
+    nav {
+      display: flex;
+      justify-content: center;
+      background: #03396c;
+    }
+
+    nav button {
+      background: transparent;
+      border: none;
+      color: white;
+      font-size: 18px;
+      padding: 15px 20px;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    nav button:hover, nav button.active {
+      background: #011f4b;
+      color: #fceabb;
+    }
+
+    .container {
+      padding: 20px;
       text-align: center;
+    }
+
+    .cards {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    .card {
+      background: white;
+      margin: 15px;
+      width: 200px;
+      padding: 15px;
+      border-radius: 12px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
       transition: transform 0.3s;
     }
 
-    .product:hover {
+    .card:hover {
       transform: scale(1.05);
     }
 
-    .product img {
+    .card img {
       width: 100%;
       border-radius: 10px;
     }
 
-    .product h3 {
-      color: #ff416c;
-    }
-
-    button {
-      background: linear-gradient(to right, #ff416c, #ff4b2b);
-      border: none;
-      color: white;
-      padding: 10px 15px;
-      border-radius: 20px;
-      cursor: pointer;
-    }
-
-    button:hover {
-      background: linear-gradient(to right, #ff4b2b, #ff416c);
-    }
-
-    footer {
-      background: #333;
-      color: white;
-      text-align: center;
-      padding: 15px;
-      margin-top: 20px;
+    .card h3 {
+      color: #5bc0eb;
     }
   </style>
 </head>
-
 <body>
 
 <header>
-  <h1>👗 StyleWave Clothing 👕</h1>
-  <p>Fashion for Everyone</p>
+  <h1>🏆 Sports Players Directory</h1>
+  <p>Explore Top Players in Football, Volleyball & Badminton</p>
 </header>
 
 <nav>
-  <a href="#">Home</a>
-  <a href="#">Shop</a>
-  <a href="#">About</a>
-  <a href="#">Contact</a>
+  <button class="active" onclick="showSport('football')">Football ⚽</button>
+  <button onclick="showSport('volleyball')">Volleyball 🏐</button>
+  <button onclick="showSport('badminton')">Badminton 🦅</button>
 </nav>
 
-<div class="hero">
-  <h2>New Collection 2026</h2>
-  <p>Trendy • Comfortable • Affordable</p>
+<div class="container" id="content">
+  <!-- Players will display here -->
 </div>
 
-<section class="products">
+<script>
+  // Data: sample player info
+  const data = {
+    football: [
+      { name: "Lionel Messi", img: "https://images.unsplash.com/photo-1552058544-f2b08422138a?auto=format&fit=crop&w=400&q=80" },
+      { name: "Cristiano Ronaldo", img: "https://images.unsplash.com/photo-1602450458798-06a8520c33df?auto=format&fit=crop&w=400&q=80" }
+    ],
+    volleyball: [
+      { name: "Karch Kiraly", img: "https://images.unsplash.com/photo-1605453332559-fa29f7d9d81f?auto=format&fit=crop&w=400&q=80" },
+      { name: "Sheilla Castro", img: "https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?auto=format&fit=crop&w=400&q=80" }
+    ],
+    badminton: [
+      { name: "P. V. Sindhu", img: "https://upload.wikimedia.org/wikipedia/commons/3/32/P._V._Sindhu_at_2016_South_Asian_Games.jpg" },
+      { name: "Viren Nettasinghe", img: "https://images.unsplash.com/photo-1583454110559-21f1eb6db8dc?auto=format&fit=crop&w=400&q=80" }
+    ]
+  };
 
-  <div class="product">
-    <img src="https://images.unsplash.com/photo-1520975916090-3105956dac38" alt="Dress">
-    <h3>Summer Dress</h3>
-    <p>Rs. 2500</p>
-    <button>Buy Now</button>
-  </div>
+  function showSport(sport) {
+    // Update button active style
+    document.querySelectorAll("nav button").forEach(btn => {
+      btn.classList.toggle("active", btn.textContent.toLowerCase().includes(sport));
+    });
 
-  <div class="product">
-    <img src="https://images.unsplash.com/photo-1521335629791-ce4aec67dd47" alt="T-Shirt">
-    <h3>Casual T-Shirt</h3>
-    <p>Rs. 1200</p>
-    <button>Buy Now</button>
-  </div>
+    const content = document.getElementById("content");
+    content.innerHTML = `<div class="cards"></div>`;
+    const container = content.querySelector(".cards");
 
-  <div class="product">
-    <img src="https://images.unsplash.com/photo-1593032457869-48f24c0d9288" alt="Jacket">
-    <h3>Winter Jacket</h3>
-    <p>Rs. 4500</p>
-    <button>Buy Now</button>
-  </div>
+    data[sport].forEach(player => {
+      const card = document.createElement("div");
+      card.className = "card";
+      card.innerHTML = `
+        <img src="${player.img}" alt="${player.name}">
+        <h3>${player.name}</h3>
+      `;
+      container.appendChild(card);
+    });
+  }
 
-  <div class="product">
-    <img src="https://images.unsplash.com/photo-1542060748-10c28b62716c" alt="Jeans">
-    <h3>Denim Jeans</h3>
-    <p>Rs. 3000</p>
-    <button>Buy Now</button>
-  </div>
-
-</section>
-
-<footer>
-  <p>© 2026 StyleWave Clothing</p>
-  <p>Contact: stylewave@email.com</p>
-</footer>
+  // default
+  showSport("football");
+</script>
 
 </body>
 </html>
